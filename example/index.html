@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>wasm benchmark demo</title>
+</head>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+<body>
+  <div id="app">
+    <div><button v-on:click="go">run go</button><span v-if="cost.go">{{ cost.go }} ms</span></div>
+    <div><button v-on:click="js">run js</button><span v-if="cost.js">{{ cost.js }} ms</span></div>
+    <div><button v-on:click="rust">run rust</button><span v-if="cost.rust">{{ cost.rust }} ms</span></div>
+    <div><button v-on:click="assemblyscript">run assemblyscript</button><span v-if="cost.assemblyscript">{{ cost.assemblyscript }} ms</span></div>
+
+  </div>
+</body>
+
+<!-- wrapper -->
+
+<!-- go -->
+<script src="Go/wasm_exec.js"></script>
+<script src="Go/main.js"></script>
+
+<!-- rust -->
+<script src="Rust/rust.js"></script>
+<script src="Rust/main.js"></script>
+
+
+<!-- AssemblyScript -->
+<script src="https://cdn.jsdelivr.net/npm/@assemblyscript/loader/umd/index.js"></script>
+<script src="AssemblyScript/main.js"></script>
+
+<!-- view -->
+<script src="view.js"></script>
+</html>

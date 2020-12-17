@@ -1,0 +1,5 @@
+/**/node_modules
+/**/*.wasm
+/**/*.wat
+/program/Rust/pkg/*
+/program/Rust/target/*
